@@ -1,2 +1,40 @@
-<h1>Hello World!</h1>
+<div class="bg-light p-2 vh-100">
+    <h1 class="text-center mb-4">Hello World!</h1>
 
+    <div class="row row-cols-2">
+        <div class="col">
+            <h2>My articles list</h2>
+
+            <ul class="list-group list-group-flush">
+                <% @articles.each do |article| %>
+                    <li class="list-group-item border-bottom ms-2">
+                        <div class="fw-bold">
+                            <%= article.title %>
+                        </div>
+                        <%= article.body %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <div class="col">
+            <h2>New Article</h1>
+
+            <%= form_with model: @article do |form| %>
+                <div>
+                    <%= form.label :title %><br>
+                    <%= form.text_field :title %>
+                </div>
+
+                <div>
+                    <%= form.label :body %><br>
+                    <%= form.text_area :body %>
+                </div>
+
+                <div>
+                    <%= form.submit %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    
+</div>
