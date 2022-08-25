@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get "/", to: "articles#index"
   post "/", to: "articles#create"
+
+  resources :articles
 end

@@ -19,7 +19,7 @@
         <div class="col">
             <h2>New Article</h1>
 
-            <%= form_with model: @article do |form| %>
+            <%= form_for :article, url: articles_path do |form| %>
                 <div>
                     <%= form.label :title %><br>
                     <%= form.text_field :title %>
